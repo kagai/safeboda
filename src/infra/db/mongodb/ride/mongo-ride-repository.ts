@@ -1,8 +1,7 @@
-import { CheckRideById } from './../../../../data/interfaces/db/ride/check-ride-by-id'
+import { LoadRideById } from './../../../../data/interfaces/db/ride/check-ride-by-id'
 import { RideModel } from './../../../../domain/models/ride'
 import { CheckRide } from './../../../../data/interfaces/db/ride/check-ride'
 import { AddRideParams } from '@domain/usecases/add-ride'
-import { RideModel } from '@domain/models/ride'
 import { MongoHelper } from '../helpers/index'
 import { AddRideRepository } from '@data/interfaces/db/ride/add-ride-repository'
 import { LoadRideRepository } from '@data/interfaces/db/ride/load-ride-repository'
@@ -17,7 +16,7 @@ export class MongoRideRepository // eslint-disable-next-line indent
     StopRide,
     LoadRideByIdRepository,
     CheckRide,
-    CheckRideById
+    LoadRideById
 {
   async checkById(passangerId: string): Promise<AddRideParams> {
     const rideCollection = await MongoHelper.getCollection('ride')
